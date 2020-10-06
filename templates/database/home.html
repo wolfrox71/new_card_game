@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %} Database home {% endblock %}
+
+{% block content %}
+
+<a href={{ url_for('database_setup') }}>Setup</a>
+<br>
+<a href={{ url_for('database_clear') }}>Clear</a>
+{% endblock %}

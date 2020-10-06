@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} Database Clear {% endblock %}
+
+{% block content %}
+
+<form method="POST" action="#">
+    <p>Delete all users</p>
+    <input type="radio" name="answer" value="Yes">
+    <input type="radio" name="answer" value="No" checked>
+    <p><input type="submit" value="submit"></p>
+</form>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% block title %}Delete User{% endblock%}
+{% block content%}
+<form action='#' method='POST'>
+<table>
+    <tr>
+        <td>Username</td>
+        <td>Password</td>
+        <td>Score</td>
+        <td>Role</td>
+        <td>To delete</td>   
+    </tr>
+
+    {% for x in values %}
+    <tr>
+        {% for j in x %}
+        <td>{{j}}</td>
+        {% endfor %}
+        <td><input type="radio" name="del_user" value="{{x[0]}}¦|{{x[1]}}" ></td>
+    </tr>
+    {% endfor %}
+</table>
+<input type="submit" value="Submit">
+</form>
+{% endblock %}

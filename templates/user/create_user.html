@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% block title %}Create User{% endblock%}
+{% block content%}
+<p>Account not found<p>
+<p>Do you want to create the account?</p>
+<form action='#' method='POST'>
+<p><input type="radio" name="create_user" value="yes" checked>Yes</p>
+<p><input type="radio" name="create_user" value="no">No</p>
+<p><input type="submit" value="Submit"></p>
+</form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %} Update User {% endblock %}
+
+{% block content %}
+<a href= {{ url_for('user_update_password') }}>Update Password</a>
+<br>
+<a href= {{ url_for('user_update_role') }}> Update Role</a>
+<br>
+<a href= {{ url_for('users_delete') }}> Delete User</a>
+{% endblock %}

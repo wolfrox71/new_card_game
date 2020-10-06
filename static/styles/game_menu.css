@@ -1,0 +1,7 @@
+    .centre {
+        text-align: center;
+        margin: 0 auto;
+        width: 25%;
+        height: 25%;
+        background-color: orange;
+    }

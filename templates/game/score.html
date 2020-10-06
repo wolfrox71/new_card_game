@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %} Finnish Game {% endblock %}
+
+{% block content %}
+<table>
+    <tr>
+        <td>Username (Player 1)</td>
+        <td>Score (%)</td>
+    </tr>
+    {% for x in players%}
+    <tr></tr>
+    {% endfor %}
+    </td>
+</table>
+
+<script>
+    var players = [];
+    var table = [];
+    {% for x in players %}
+        var to_add = [];
+        {% for j in x%}
+            to_add.push("{{j}}");
+        {% endfor %}
+        players.push(to_add);
+    {% endfor%}
+
+    
+    var rows = document.getElementsByTagName("tr");
+    for (var i = 1; i < rows.length; i++) {
+        for (var j = 0; j < 2; j++ ){
+            var x = rows[i].insertCell(-1)
+            x.innerHTML = String(i)+" "+String(j)
+            x.innerHTML = players[i-1][j*2];
+        }
+    }
+</script>
+{% endblock %}

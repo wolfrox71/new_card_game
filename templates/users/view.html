@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} View users {% endblock %}
+
+{% block content %}
+
+<table>
+    <tr>
+        <td>Username</td>
+        <td>Password</td>
+        <td>Score</td>
+        <td>Role</td>
+    </tr>
+    {% for x in values %}
+    <tr>
+        {% for j in x%}
+        <td>{{j}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

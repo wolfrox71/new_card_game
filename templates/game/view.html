@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %} View users {% endblock %}
+
+{% block content %}
+<style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+}
+    td {
+    text-align: center;
+}
+</style>
+<div id="leftbox" style="position: absolute; left: 0px; width: 50%; height: 100%; text-align: center; z-index: 1;">
+    <table>
+        <tr>
+            <td colspan="2">Player 1</td>
+            <td colspan="2">Player 2</td>
+        </tr>
+        <tr>
+            <td>Colour</td>
+            <td>Number</td>
+            <td>Colour</td>
+            <td>Number</td>
+            <td >Winner</td>
+        </tr>
+        {% for x in values %}
+        
+        <tr>
+            <td>{{x[0][0]}}</td>
+            <td>{{x[0][1]}}</td>
+            <td>{{x[1][0]}}</td>
+            <td>{{x[1][1]}}</td>
+            <td>{{x[2]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<div id="rightbox" style="position: absolute; right: 0px; width: 50%; height: 100%; text-align: center; z-index: 1;">
+</div>
+ 
+{% endblock %}

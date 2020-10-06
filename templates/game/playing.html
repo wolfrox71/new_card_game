@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %} Database home {% endblock %}
+
+{% block content %}
+<div id="leftbox" style="position: absolute; left: 0px; width: 50%; height: 100%; text-align: center; z-index: 1;">
+    <h1 id="left_colour"></h1>
+    <br>
+    <h2 id="left_number"></h2>
+</div>
+<div id="rightbox" style="position: absolute; right: 0px; width: 50%; height: 100%; text-align: center; z-index: 1;">
+    <h1 id="right_colour"></h1>
+    <br>
+    <h2 id="right_number"></h2>
+</div>
+<div id="centre" style="position: absolute; left:40%; width: 20%; height:30%; z-index: 2; margin-top: 20%;  text-align: center;">
+    <h1>Winner: {{winner}}</h1>
+    <a href="/game/playing/{{id+2}}" style="color: white" id="next_card">Next Card</a>
+    <a href="/game/finnished/" style="color: white" id="finnish_game" hidden>Finnish Game</a>
+    <br>
+    <a href="/game/" style="color: white">New Cards</a>
+    <br>
+    <a href="/game/view" style="color: white">View all Cards</a>
+</div>
+<script>
+
+    const leftbox = document.getElementById("leftbox");
+    const rightbox = document.getElementById("rightbox");
+
+    const left_colour = document.getElementById("left_colour");
+    const left_number = document.getElementById("left_number");
+
+    const right_colour = document.getElementById("right_colour");
+    const right_number = document.getElementById("right_number");
+
+    var last_card = "{{last_card}}";
+    var lbgc = '{{left_colour}}';
+    var rbgc = '{{right_colour}}';
+    var left_num_value = '{{left_number}}';
+    var right_num_value = '{{right_number}}';
+    leftbox.style.backgroundColor = lbgc;
+    rightbox.style.backgroundColor = rbgc;
+
+    left_colour.innerHTML = lbgc;
+    right_colour.innerHTML = rbgc;
+
+    left_number.innerHTML = left_num_value;
+    right_number.innerHTML = right_num_value;
+
+    if (last_card == "True") {
+        document.getElementById("next_card").style.display = "none";
+        document.getElementById("finnish_game").style.display ="block";
+    }
+</script>
+{% endblock %}
